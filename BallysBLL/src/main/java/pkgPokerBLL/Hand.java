@@ -112,10 +112,10 @@ public class Hand {
 		if ((h.getCardsInHand().get(0).geteRank() == h.getCardsInHand().get(1).geteRank()
 				&& h.getCardsInHand().get(0).geteRank() == h.getCardsInHand().get(2).geteRank()
 				&& h.getCardsInHand().get(0).geteRank() == h.getCardsInHand().get(3).geteRank()
-				&& h.getCardsInHand().get(0).geteRank() == h.getCardsInHand().get(4).geteRank())
 				|| h.getCardsInHand().get(1).geteRank() == h.getCardsInHand().get(2).geteRank()
 						&& h.getCardsInHand().get(1).geteRank() == h.getCardsInHand().get(3).geteRank()
-						&& h.getCardsInHand().get(1).geteRank() == h.getCardsInHand().get(4).geteRank()) {
+						&& h.getCardsInHand().get(1).geteRank() == h.getCardsInHand().get(4).geteRank())) {
+			
 			hs.setHandStrength(eHandStrength.FourOfAKind);
 			return true;
 		} else
@@ -144,7 +144,11 @@ public class Hand {
 
 	// TODO: Implement This Method
 	public static boolean isHandStraight(Hand h, HandScore hs) {
-
+		
+		if (isStraight(h.getCardsInHand())){
+			hs.setHandStrength(eHandStrength.Straight);
+			return true;	
+		}
 		return false;
 	}
 
