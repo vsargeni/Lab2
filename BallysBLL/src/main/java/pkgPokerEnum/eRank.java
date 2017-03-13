@@ -24,4 +24,5 @@ public enum eRank {
 	public int getiRankNbr() {
 		return iRankNbr;
 	}
+	
 }
